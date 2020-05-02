@@ -30,6 +30,7 @@ cmake_minimum_required( VERSION 3.1.0 )
 
 set( CMAKE_DISABLE_SOURCE_CHANGES ON )
 set( CMAKE_DISABLE_IN_SOURCE_BUILD ON )
+add_definitions(-DFILAMENT_REQUIRES_CXXABI=true)
 
 set( CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" )
 
@@ -140,8 +141,8 @@ if( MINGW )
   set( CMAKE_SHARED_LINKER_FLAGS "-Wl,--export-all" )
 endif()
 
-include( CheckTypeSize )
 include(CheckFunctionExists)
+include( CheckTypeSize )
 
 check_type_size( "long" LONG_INT )
 check_type_size( "long long" LONG_LONG_INT )
