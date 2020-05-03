@@ -25,12 +25,12 @@
 # SOFTWARE.
 
 set( CMAKE_LEGACY_CYGWIN_WIN32 0 )
-project( openssl )
+project( openssl LANGUAGES C)
 cmake_minimum_required( VERSION 3.1.0 )
 
 set( CMAKE_DISABLE_SOURCE_CHANGES ON )
 set( CMAKE_DISABLE_IN_SOURCE_BUILD ON )
-add_definitions(-DFILAMENT_REQUIRES_CXXABI=true)
+set( FILAMENT_REQUIRES_CXXABI ON)
 
 set( CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" )
 
